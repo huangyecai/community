@@ -31,10 +31,10 @@
                 <button type="submit" class="btn btn-default">搜索</button>
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="https://gitee.com/oauth/authorize?client_id=3d61b227fc70b4981069238be493a0666375d54d434c34710d1c50b46a97e26b&redirect_uri=http%3A%2F%2Flocalhost%3A8888%2Fcallback&response_type=code">登录</a></li>
-                <li class="dropdown">
+                <li th:if="${session.user == null}"><a href="https://gitee.com/oauth/authorize?client_id=3d61b227fc70b4981069238be493a0666375d54d434c34710d1c50b46a97e26b&redirect_uri=http%3A%2F%2Flocalhost%3A8888%2Fcallback&response_type=code">登录</a></li>
+                <li class="dropdown"  th:if="${session.user != null}">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">个人中心 <span class="caret"></span></a>
+                       aria-expanded="false" th:text="${session.user.getName()}">个人中心 <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">消息中心</a></li>
                         <li><a href="#">设置中心</a></li>

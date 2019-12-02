@@ -28,4 +28,13 @@ public class GiteeUser {
     public void setBio(String bio) {
         this.bio = bio;
     }
+
+    @Override
+    public String toString() {
+        return "GiteeUser{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", bio='" + bio + '\'' +
+                '}';
+    }
 }
